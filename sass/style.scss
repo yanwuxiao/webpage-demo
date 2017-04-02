@@ -1,0 +1,210 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "iconfont";
+$bg-color: #fff;
+$text-color: #4f4f4f;
+$second-text-color: #D9DADA;
+$highlight-color: lightgreen;
+$highlight-text-color: white;
+$body-color: #efefef;
+$button-color: #6cdcac;
+$border-color: #D9DADA;
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
+    text-align: center;
+}
+
+@mixin clearfix() {
+    /*clear:both;*/
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin border-radius($radius: 5px) {
+    border-radius: $radius;
+}
+
+.hero {
+    max-height: 100em;
+    margin: 0 auto;
+    background: url("/images/find-an-agent-hero.png");
+    background-size: cover;
+    color: $highlight-text-color;
+    header {
+        img {
+            width: 8em;
+            height: 2em;
+            float: left;
+            margin: 1em 2em;
+        }
+        ul {
+            float: right;
+            li {
+                float: left;
+                margin: 1em .5em;
+                padding: .5em 1em;
+                border: 1px solid transparent;
+                &:last-child {
+                    border: 1px solid $highlight-text-color;
+                }
+            }
+        }
+        @include clearfix;
+    }
+    h1 {
+        font-weight: bold;
+        font-size: 4em;
+        padding: 3em 0 .5em 0;
+    }
+    h2 {
+        font-size: 2em;
+        padding: 1em 0 1em 0;
+        color: #d9dada;
+    }
+    form {
+        padding: 1.25em 0 12em 0;
+        input[type="text"] {
+            padding: 1em;
+            border: 0;
+            width: 18em;
+            border-radius: 2px 0 0 2px;
+            background: $bg-color;
+            opacity: .3;
+        }
+        input[type="button"] {
+            color: $highlight-text-color;
+            padding: 1em;
+            border: 0;
+            width: 6em;
+            border-radius: 0 2px 2px 0;
+            background-color: lightgreen;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.numbers {
+    width: 80%;
+    margin: 0 auto;
+    ul {
+        position: relative;
+        top: -4em;
+        background: $bg-color;
+        li {
+            float: left;
+            width: 25%;
+            box-sizing: border-box;
+            border-top: 1px solid $second-text-color;
+            border-bottom: 1px solid $second-text-color;
+            border-left: 1px solid $second-text-color;
+        }
+        &:last-child {
+            border-right: 1px solid $second-text-color;
+        }
+        h2 {
+            font-size: 2em;
+            font-weight: bold;
+            padding: 1em 0;
+        }
+        h3 {
+        	font-size: 1.25em;
+            padding: 0 0 2em 0;
+        }
+        @include clearfix;
+    }
+}
+
+.how-it-works {
+    width: 80%;
+    margin: 2em auto;
+    h2 {
+        font-size: 2em;
+        text-transform: uppercase;
+        color: #2f2f2f;
+        padding: 1em;
+        &:after {
+            display: block;
+            content: "";
+            background-color: $border-color;
+            width: 4em;
+            height: .2em;
+            margin: .5em auto;
+        }
+    }
+    h3 {
+        font-size: 2em;
+        color: #2f2f2f;
+        padding: 1em 0;
+    }
+
+    li {
+        float: left;
+        width: 33.3%;
+        position: relative;
+        &:before{
+        	display:block;
+        	content: "";
+        	background: $border-color;
+        	width: 80%;
+        	height: 2px;
+        	position: absolute;
+        	top: 5em;
+        	left: 60%;
+        }
+        &:last-child:before{
+        	display: none;
+        }
+    }
+    .number {
+        font-size: 2em;
+        color: $border-color;
+        border: 2px solid $border-color;
+        width: 2em;
+        height: 2em;
+        display: block;
+        margin: 1em auto 2em auto;
+        padding: .4em;
+        /*border-radius: 100%;*/
+        @include border-radius(100%);
+        background-color: $bg-color;
+        line-height: 2em;
+        text-align: center;
+        align-content: center;
+    }
+    i {
+        font-size: 3.6em;
+        margin-bottom: .5em;
+    }
+    .icon-list,
+    .fa-address-card-o {
+        color: #ECA95A;
+    }
+    .icon-pencil,
+    .fa-pencil {
+        color: #AC9CD2;
+    }
+    .icon-users,
+    .fa-users {
+        color: #4D99CB;
+    }
+    p{
+    	font-size:1.2em;
+    	width: 80%;
+    	text-align: center;
+    	padding:0 1em;
+    	margin:0 auto;
+    	color: #6e6e6e;
+    }
+    p::before {
+        content: "";
+        display: block;
+        color: #6e6e6e;
+    }
+}
